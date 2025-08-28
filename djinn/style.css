@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'ackley', 'inter', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background: #FCF8F3;
+}
+
+.food-survey {
+    height: 105px;
+    width: 120px;
+}
+
+/* header section */
+.hero-section {
+    height: 100vh;
+    background-image: url(./assects/first.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    background: rgba(124, 123, 100, 1);
+    transition: all 0.3s ease;
+}
+
+.header:scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+    text-align: center;
+    color: #fff;
+}
+
+.logo h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-transform: lowercase;
+}
+
+.logo p {
+    font-size: 0.2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-top: -15px;
+    margin-left: 55px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: rgb(245, 245, 146);
+}
+
+.nav-menu a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ece5cd;
+    transition: width 1s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-menu a img {
+    height: 20px;
+    width: 20px;
+    /* color: #fff; */
+    filter: invert(1);
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 80px;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* animation part */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    padding: 0.9rem 2rem;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 20px;
+    /* thoda space neeche se */
+    left: 50%;
+    /* parent ke 50% point pe */
+    transform: translate(-50%);
+    /* apni width ke half se adjust */
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+
+}
+
+/* service section */
+.service {
+    padding: 3rem 4rem;
+}
+
+.service h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: black;
+}
+
+.service-grid {
+    /* display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    margin: 0 auto; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    /* background: #fff; */
+    /* padding: 1.5rem; */
+    border-radius: 15px;
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+    transition: transform 0.8s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
+
+.service-card p {
+    height: 82px;
+    overflow: hidden;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.service-card .service-img2 {
+    height: 330px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* service section 2 */
+.service-button {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.9rem 2rem;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #1a1919;
+    border: 1px solid #000000;
+    text-align: center;
+    grid-column: 1 / -1;
+    /* pura row occupy kare */
+    justify-self: center;
+    /* row ke beech me center */
+    transition: all 0.5s ease;
+}
+
+.service-button:hover {
+    background-color: #d4af37;
+    color: black;
+    box-shadow: 0 10px 30px rgba(195, 167, 40, 0.1);
+}
+
+.lady-chef {
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.service-card2 {
+    border-radius: 15px;
+    text-align: start;
+}
+
+.service-card2 p {
+    line-height: 2;
+    letter-spacing: 2;
+    font-size: 1.2rem;
+    margin: 20px 0px;
+}
+
+.service-card2 h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 20px 0px;
+}
+
+/* menu section */
+.menu-section {
+    padding: 3rem 4rem;
+}
+
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* margin-bottom: 1.3rem; */
+    max-width: 1200px;
+    margin: auto;
+}
+
+.menu-bar h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.menu-bar p {
+    line-height: 2;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.menu-bar img {
+    height: 600px;
+    width: 100%;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+}
+
+.option-menus {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.option-menu {
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.option-menu img {
+    margin: 0 auto 1rem;
+    /* left right auto = center */
+    display: block;
+    /* inline image ko block bna do */
+    transform: translateX(-50px);
+    /* 20px left shift */
+}
+
+.option-menu h4 {
+    font-size: 1.7rem;
+    font-family: 'Playfair Display', serif;
+    color: black;
+    margin-bottom: 1rem;
+    text-align: start;
+}
+
+.option-menu ul li {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2;
+}
+
+/* #F2E8DD */
+
+/* sample menu section */
+.sample-menus {
+    background-color: #f2e5d8;
+    font-family: sans-serif;
+    padding: 4rem 3rem;
+    margin-bottom: 3rem;
+}
+
+.sample-menus h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+    color: #1a1919;
+}
+
+.sample-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    /* grid ko full width le do */
+    /* justify-content: space-between; optional: pura grid ko spread karega */
+}
+
+.sample-menu img {
+    height: 600px;
+    width: 500px;
+    border-radius: 50px;
+    filter: invert(0);
+}
+
+.sample-grid .sample-menu h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: start;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.sample-grid .sample-menu p {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* contact section */
+.contact {
+    padding: 3rem 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #1a1919;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.contact-item h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1.3rem 0rem;
+}
+
+.contact-item p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+}
+
+.book {
+    color: #1a1919;
+    border-color: #1a1919;
+    margin-bottom: 1rem;
+}
+
+.social-medias {
+    display: flex;
+    gap: 15px;
+    /* icons ke beech ka gap */
+    align-items: center;
+    /* center align */
+}
+
+.social-medias a img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    /* image ko stretch nahi karega */
+    border-radius: 8px;
+    /* thoda rounded corner (optional) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.social-medias a img:hover {
+    transform: scale(1.2);
+    /* hover par zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* shadow */
+}
+
+/* footer part */
+.copyRight {
+    padding: 3rem 9rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+.footer h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-transform: lowercase;
+}
+
+.footer p {
+    color: #000000;
+    font-size: 0.3rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-top: -15px;
+    margin-left: 40px;
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 2rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .services,
+    .menu-section,
+    .sample-menus,
+    .contact {
+        padding: 4rem 2rem;
+    }
+
+    .service-grid,
+    .menu-categories,
+    .sample-menus {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        section{
+            height: 700px;
+            width: 800px;
+            background-color: wheat;
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px 100px;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            border: 1px dashed gray;
+        }
+        .b1{background-color: aqua;}
+        .b2{background-color: aquamarine;}
+        .b3{background-color: chartreuse;}
+    </style>
+</head>
+<body>
+    <!-- It is 2D  -->
+     <section>
+        <div class="box b1">Box 1</div>
+        <div class="box b2">Box 2</div>
+        <div class="box b3">Box 3</div>
+     </section>
+</body>
+</html>

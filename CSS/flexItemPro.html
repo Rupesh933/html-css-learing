@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        #container{
+            width: 800px;
+            height: 600px;
+            background-color:  wheat;
+            margin: auto;
+            border: 2px dashed gray;
+            display: flex;
+            /* flex-direction: columnr; */
+            justify-content: center;
+        }
+        #container .box{
+            width: 200px;
+            height: 250px;
+            /* text-align: center; */
+
+        }
+        .b1{background-color: aquamarine; order: 1;}
+        .b2{background-color: blueviolet; align-self: center;}
+        .b3{background-color: chartreuse; order: 2; flex-basis: 300px;}
+    </style>
+</head>
+<body>
+    <section id="container">
+        <div class="box b1">Box 1</div>
+        <div class="box b2">Box 2</div>
+        <div class="box b3">box 3</div>
+    </section>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        #home{
+            height: 80%;
+            background-color: aquamarine;
+            display: flex;
+        }
+        .left{
+            /* width: 50%; */
+            flex-grow: 50%;
+            height: 100%;
+            background-color: bisque;
+        }
+        .right{
+            /* width: 50%; */
+            flex-grow: 50%;
+            height: 100%;
+            background-color: rgb(187, 88, 220);
+        }
+    </style>
+</head>
+<body>
+    <section id="home">
+        <div class="left b1">Box 1</div>
+        <div class="right b2">Box 2</div>
+    </section>
+</body>
+</html>
